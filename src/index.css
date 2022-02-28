@@ -9,3 +9,9 @@
     font-family: "Kumbh Sans";
   }
 }
+
+@layer components {
+  .cart {
+    @apply absolute w-[360px] h-[255px] right-[8px] mt-[8px] rounded-[8px] bg-white lg:right-[90px] lg:-mt-[20px] shadow-3xl;
+  }
+}

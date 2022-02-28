@@ -12,6 +12,12 @@ module.exports = {
         "Dark-grayish-blue": "hsl(219, 9%, 45%)",
         "Grayish-blue": "hsl(220, 14%, 75%)",
         "Light-grayish-blue": "hsl(223, 64%, 98%)",
+
+        "bg-black": "hsla(0, 0%, 0%, 0.75)",
+      },
+      boxShadow: {
+        "3xl":
+          "rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;",
       },
     },
   },
