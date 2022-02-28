@@ -4,7 +4,7 @@ const MobileMenu = ({ menuStat, mobileMenuFunc }) => {
   return (
     <div
       className={
-        menuStat ? "absolute top-0 bg-bg-black w-full h-full" : "hidden"
+        menuStat ? "absolute top-0 bg-bg-black w-full h-full z-10" : "hidden"
       }
     >
       <section className="bg-white w-[65%] h-full p-[25px]">

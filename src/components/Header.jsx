@@ -3,7 +3,7 @@ import logo from "../assets/images/logo.svg";
 import cart from "../assets/images/icon-cart.svg";
 import avatar from "../assets/images/image-avatar.png";
 
-const Header = ({ cartFunc, mobileMenuFunc }) => {
+const Header = ({ cartFunc, mobileMenuFunc, cartCount }) => {
   return (
     <header className=" px-[25px] py-[20px] lg:px-[165px] lg:py-[30px] bg-white  ">
       <div className="flex justify-between items-center relative">
@@ -43,12 +43,19 @@ const Header = ({ cartFunc, mobileMenuFunc }) => {
           </div>
         </div>
         <div className="flex items-center">
-          <img
-            className="mr-[22px] lg:mr-[45px] hover:cursor-pointer"
-            src={cart}
-            alt="shopping cart"
-            onClick={cartFunc}
-          />
+          <div className="relative">
+            <img
+              className="mr-[22px] lg:mr-[45px] hover:cursor-pointer"
+              src={cart}
+              alt="shopping cart"
+              onClick={cartFunc}
+            />
+            <div className={cartCount > 0 ? "cartCounter" : "hidden"}>
+              <p className="absolute top-[-2px] right-[6px] text-[12px] text-white">
+                {cartCount}
+              </p>
+            </div>
+          </div>
           <img
             className="h-[25px] lg:h-[50px] hover:cursor-pointer hover:border-2 hover:rounded-[50%] hover:border-Orange"
             src={avatar}
