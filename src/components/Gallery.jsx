@@ -3,13 +3,14 @@ import thumbnail2 from "../assets/images/image-product-2-thumbnail.jpg";
 import thumbnail3 from "../assets/images/image-product-3-thumbnail.jpg";
 import thumbnail4 from "../assets/images/image-product-4-thumbnail.jpg";
 
-const Gallery = ({ picture, currentPic, galleryFunc }) => {
+const Gallery = ({ picture, currentPic, galleryFunc, floatingGalleryFunc }) => {
   return (
     <div className="flex-col hidden lg:flex">
       <img
         className="w-[445px] mb-[30px] rounded-[14px] cursor-pointer"
         src={picture}
         alt="picture"
+        onClick={floatingGalleryFunc}
       />
       <div className="flex flex-row flex-wrap justify-between">
         <img

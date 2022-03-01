@@ -3,13 +3,13 @@ import logo from "../assets/images/logo.svg";
 import cart from "../assets/images/icon-cart.svg";
 import avatar from "../assets/images/image-avatar.png";
 
-const Header = ({ cartFunc, mobileMenuFunc, cartCount }) => {
+const Header = ({ cartFunc, mobileMenuFunc, cartCount, reloadPage }) => {
   return (
     <header className=" px-[25px] py-[20px] lg:px-[165px] lg:py-[30px] bg-white  ">
       <div className="flex justify-between items-center relative">
         <div className="flex items-center">
           <img
-            className="mr-[15px] h-[16px] lg:hidden"
+            className="mr-[15px] h-[16px] lg:hidden cursor-pointer"
             src={menuIcon}
             alt="menuIcon"
             onClick={mobileMenuFunc}
@@ -18,6 +18,7 @@ const Header = ({ cartFunc, mobileMenuFunc, cartCount }) => {
             className="h-[20px] lg:mr-[60px]  hover:cursor-pointer"
             src={logo}
             alt="logo"
+            onClick={reloadPage}
           />
           <div className="space-x-[35px] text-Dark-grayish-blue hidden lg:flex  ">
             <div className="group relative">

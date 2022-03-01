@@ -10,20 +10,20 @@ const MobileGallery = ({ picture, currentPic, galleryFunc }) => {
         alt="gallery"
       />
       <div
-        className="absolute top-[40%] right-[5%] flex justify-center items-center h-[40px] w-[40px] bg-white rounded-[50%]"
+        className="absolute top-[40%] right-[5%] flex justify-center items-center h-[40px] w-[40px] bg-white rounded-[50%] cursor-pointer"
         onClick={() => {
           currentPic !== 3 ? galleryFunc(currentPic + 1) : galleryFunc(0);
         }}
       >
-        <img className="cursor-pointer" src={next} alt="next" />
+        <img src={next} alt="next" />
       </div>
       <div
-        className="absolute top-[40%] left-[5%] flex justify-center items-center h-[40px] w-[40px] bg-white rounded-[50%]"
+        className="absolute top-[40%] left-[5%] flex justify-center items-center h-[40px] w-[40px] bg-white rounded-[50%] cursor-pointer"
         onClick={() => {
           currentPic !== 0 ? galleryFunc(currentPic - 1) : galleryFunc(3);
         }}
       >
-        <img className="cursor-pointer" src={previous} alt="next" />
+        <img src={previous} alt="previous" />
       </div>
     </div>
   );

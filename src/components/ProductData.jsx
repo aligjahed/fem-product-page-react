@@ -1,7 +1,6 @@
 import { useState } from "react";
 import minusIcon from "../assets/images/icon-minus.svg";
 import plusIcon from "../assets/images/icon-plus.svg";
-import cart from "../assets/images/icon-cart.svg";
 
 const ProductData = ({ addCart }) => {
   const [productCount, setProductCount] = useState(0);

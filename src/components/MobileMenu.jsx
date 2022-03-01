@@ -4,12 +4,14 @@ const MobileMenu = ({ menuStat, mobileMenuFunc }) => {
   return (
     <div
       className={
-        menuStat ? "absolute top-0 bg-bg-black w-full h-full z-10" : "hidden"
+        menuStat
+          ? "absolute top-0  lg:hidden bg-bg-black w-full h-full z-10"
+          : "hidden"
       }
     >
       <section className="bg-white w-[65%] h-full p-[25px]">
         <img
-          className="mb-[55px]"
+          className="mb-[55px] cursor-pointer"
           src={closeIcon}
           alt="closeMenuIcon"
           onClick={mobileMenuFunc}

@@ -16,9 +16,10 @@ import pic4 from "./assets/images/image-product-4.jpg";
 function App() {
   const [cartOpen, setCartOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [gallery] = useState([pic1, pic2, pic3, pic4]);
   const [selGallery, setSelGallery] = useState(0);
   const [cartCount, setCartCount] = useState(0);
+  const [floatingGalleryOpen, setFloatingGalleruOpen] = useState(false);
+  const gallery = [pic1, pic2, pic3, pic4];
 
   // Open and close cart section
   const cartFunc = () => {
@@ -28,6 +29,10 @@ function App() {
   // Open and close mobile menu
   const mobileMenuFunc = () => {
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const floatingGalleryFunc = () => {
+    setFloatingGalleruOpen(!floatingGalleryOpen);
   };
 
   // set gallery image
@@ -44,12 +49,17 @@ function App() {
     setCartCount(0);
   };
 
+  const reloadPage = () => {
+    window.location.reload(true);
+  };
+
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen relative select-none">
       <Header
         mobileMenuFunc={mobileMenuFunc}
         cartFunc={cartFunc}
         cartCount={cartCount}
+        reloadPage={reloadPage}
       ></Header>
       <Cart
         resetCart={resetCart}
@@ -71,9 +81,16 @@ function App() {
           picture={gallery[selGallery]}
           currentPic={selGallery}
           galleryFunc={galleryFunc}
+          floatingGalleryFunc={floatingGalleryFunc}
         ></Gallery>
       </div>
-      <FloatingGallery></FloatingGallery>
+      <FloatingGallery
+        picture={gallery[selGallery]}
+        currentPic={selGallery}
+        galleryFunc={galleryFunc}
+        openState={floatingGalleryOpen}
+        stateFunc={floatingGalleryFunc}
+      ></FloatingGallery>
     </div>
   );
 }
